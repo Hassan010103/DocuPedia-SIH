@@ -1,0 +1,308 @@
+
+{
+  "common": {
+    "all": "All",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "saved": "Saved!",
+    "delete": "Delete",
+    "share": "Share",
+    "download": "Download",
+    "viewDetails": "View Details",
+    "name": "Name",
+    "status": "Status",
+    "role": "Role",
+    "team": "Team",
+    "owner": "Owner",
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "send": "Send",
+    "previewUnavailable": "Document content preview is not available in this demo."
+  },
+  "roles": {
+    "admin": "Admin",
+    "editor": "Editor",
+    "viewer": "Viewer"
+  },
+  "statuses": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "invited": "Invited"
+  },
+  "sidebar": {
+    "title": "KMRL",
+    "subtitle": "DocStream Nexus",
+    "nav": {
+      "dashboard": "Dashboard",
+      "documents": "Documents",
+      "analytics": "Analytics",
+      "teams": "Teams",
+      "inbox": "Inbox",
+      "settings": "Settings",
+      "help": "Help"
+    }
+  },
+  "header": {
+    "searchPlaceholder": "Search for documents, teams, or reports...",
+    "notifications": "Notifications ({{count}} new)",
+    "viewAllNotifications": "View all notifications",
+    "profile": "My Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "login": {
+    "title": "Select Profile to Login",
+    "subtitle": "No password needed for this demo."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {{name}}! Here's a snapshot of your workspace.",
+    "totalDocuments": "Total Documents",
+    "newThisMonth": "New This Month",
+    "storageUsed": "Storage Used",
+    "summarizingMultiple": "Summarizing {{count}} file(s)...",
+    "summarizingSingle": "Summarizing \"{{name}}\" ({{current}}/{{total}})...",
+    "aiWorking": "AI is generating summaries, please wait...",
+    "recentUpdates": "Recent Updates by Type"
+  },
+  "docUpload": {
+    "dragAndDrop": "Drag & Drop your files here",
+    "or": "or",
+    "clickToBrowse": "click to browse",
+    "supports": "Supports: PDF, DOCX, PNG, JPG"
+  },
+  "pendingTasks": {
+    "title": "My Pending Documents",
+    "overdue": "Overdue",
+    "dueToday": "Due today",
+    "dueIn": "Due in {{days}} days",
+    "dueOn": "Due on {{date}}",
+    "new": "New",
+    "review": "Review",
+    "allCaughtUp": "You're all caught up!",
+    "noPending": "No pending documents requiring your attention."
+  },
+  "documentsPage": {
+    "title": "All Documents",
+    "subtitle": "Browse, search, and manage all documents in your repository.",
+    "selected": "{{count}} selected",
+    "shareSelected": "Share Selected",
+    "downloadSelected": "Download Selected",
+    "deleteSelected": "Delete Selected",
+    "filtersAndActions": "Filters & Actions",
+    "noSummary": "No summary available.",
+    "headers": {
+      "name": "Name",
+      "owner": "Owner",
+      "lastModified": "Last Modified",
+      "fileSize": "File Size",
+      "actions": "Actions"
+    },
+    "deleteModal": {
+      "title": "Delete {{count}} Document(s)",
+      "message": "Are you sure you want to delete these documents? This action cannot be undone."
+    }
+  },
+  "analyticsPage": {
+    "title": "Analytics Dashboard",
+    "subtitle": "Detailed insights into your document repository.",
+    "periods": {
+      "days": "{{count}} Days",
+      "allTime": "All Time"
+    },
+    "totalUsers": "Total Users",
+    "newDocs": "New Docs ({{period}})",
+    "trendingTags": "Trending Document Tags",
+    "storageByType": "Storage by Type",
+    "filesCount": "{{count}} files",
+    "userActivity": "User Activity Leaderboard ({{period}})",
+    "headers": {
+      "rank": "Rank",
+      "user": "User",
+      "uploads": "Documents Uploaded"
+    },
+    "noActivity": "No user activity in this period."
+  },
+  "teamsPage": {
+    "title": "Team Management",
+    "subtitle": "Manage members, view workloads, and track pending documents.",
+    "addMember": "Add Member",
+    "tabs": {
+      "members": "Team Members",
+      "workload": "Workload Distribution",
+      "pending": "Pending by Team"
+    },
+    "headers": {
+      "teamMember": "Team Member",
+      "totalDocs": "Total Docs",
+      "pendingDocs": "Pending Docs",
+      "workload": "Workload"
+    },
+    "memberDocs": "{{name}}'s Documents:",
+    "noDocs": "No documents assigned.",
+    "pendingCount": "{{count}} Pending",
+    "deleteModal": {
+      "title": "Delete Member",
+      "message": "Are you sure you want to remove {{name}}? This action cannot be undone."
+    }
+  },
+  "inboxPage": {
+    "title": "Inbox",
+    "subtitle": "Review and process documents routed from external sources.",
+    "pendingItems": "Pending Items ({{count}})",
+    "from": "from",
+    "fromVia": "from {{sender}} via {{source}}",
+    "fileType": "File Type",
+    "fileSize": "File Size",
+    "selectItem": "Select an item to view details",
+    "reject": "Reject",
+    "processing": "Processing...",
+    "accept": "Accept to Repository",
+    "emptyTitle": "Your Inbox is Empty",
+    "emptySubtitle": "Documents routed here from your integrations will appear here.",
+    "deleteModal": {
+        "title": "Reject Document",
+        "message": "Are you sure you want to reject \"{{name}}\"? This will permanently remove it from your inbox."
+    }
+  },
+  "settingsPage": {
+    "title": "Settings",
+    "subtitle": "Manage your account and application preferences.",
+    "profile": {
+      "title": "Profile",
+      "saveChanges": "Save Changes"
+    },
+    "security": {
+      "title": "Security",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "updatePassword": "Update Password"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": "Email Notifications",
+      "push": "Push Notifications",
+      "digest": "Weekly Digest"
+    }
+  },
+  "helpPage": {
+    "title": "Help & Support",
+    "subtitle": "Find answers to your questions and get in touch with our team.",
+    "faqTitle": "Frequently Asked Questions",
+    "kb": {
+      "title": "Search Knowledge Base",
+      "placeholder": "e.g., how to share a file"
+    },
+    "support": {
+      "title": "Contact Support",
+      "subtitle": "Can't find an answer? Submit a ticket and we'll get back to you.",
+      "subject": "Subject",
+      "message": "How can we help?",
+      "submit": "Submit Request",
+      "submitSuccess": "Your support request has been submitted successfully!"
+    },
+    "faqs": {
+      "q1": "How do I upload a document?",
+      "a1": "You can upload documents by either dragging and dropping them onto the designated area on the Dashboard or by clicking the \"click to browse\" link to open your file explorer and select files manually. The system supports multiple file uploads at once.",
+      "q2": "What file types are supported for AI summarization?",
+      "a2": "Our AI summarization currently works best with text-based documents like PDF and DOCX. For image files like JPG or PNG, the AI generates a summary based on the filename. We are actively working on expanding our OCR capabilities to summarize text within images.",
+      "q3": "How long does it take to generate an AI summary?",
+      "a3": "Summary generation is typically very fast, often completing within 5-10 seconds. For very large or complex documents, it may take slightly longer. You will see a \"Generating...\" status next to the document while the process is ongoing.",
+      "q4": "Can I re-summarize a document?",
+      "a4": "Yes. If a summary fails or you believe a better one can be generated, you can click the \"Re-summarize\" button in the document list. This will send a new request to the AI to generate a new summary for that file.",
+      "q5": "How do I share a document with my team?",
+      "a5": "From the document list on either the Dashboard or the Documents page, click the \"Share\" button on the desired document. This will open a dialog where you can select team members or entire teams, set permissions (e.g., view or edit), and send a notification.",
+      "q6": "Is there a version history for documents?",
+      "a6": "Version history is a planned feature and is currently in development. Soon, you will be able to view and revert to previous versions of your documents, providing a complete audit trail of all changes.",
+      "q7": "Can I access my documents on a mobile device?",
+      "a7": "The application is fully responsive and accessible through any modern web browser on your mobile device or tablet. A dedicated native mobile app is on our future roadmap.",
+      "q8": "What security measures are in place to protect our data?",
+      "a8": "We take data security very seriously. All documents are encrypted at rest and in transit using industry-standard AES-256 encryption. Access controls are strictly enforced, and our infrastructure undergoes regular security audits to ensure compliance and protection against threats.",
+      "q9": "Where can I see my storage usage?",
+      "a9": "Your current storage usage is displayed on the Dashboard in the \"Storage Used\" card. More detailed storage analytics, including usage by file type and date, can be found on the Analytics page.",
+      "q10": "How does the search functionality work?",
+      "a10": "The search bar in the header allows you to perform a global search across all documents, teams, and reports. It indexes document names, AI-generated summaries, and metadata to provide fast and relevant results.",
+      "q11": "Can I create teams and manage permissions?",
+      "a11": "Yes, administrators can create teams and manage user roles from the \"Teams\" and \"Settings\" pages. You can assign users to different teams and define granular permissions for document access, ensuring that users can only see the information relevant to them."
+    }
+  },
+  "docDetail": {
+    "back": "Back to Documents",
+    "uploaded": "Uploaded",
+    "tabs": {
+        "view": "Document View",
+        "history": "Version History",
+        "journey": "Document Journey",
+        "graph": "Knowledge Graph"
+    },
+    "versionByOn": "by {{editor}} on {{date}}",
+    "noHistory": "No history available for this document.",
+    "annotations": {
+      "title": "Annotations & Comments",
+      "none": "No comments yet.",
+      "placeholder": "Add a comment..."
+    },
+    "ai": {
+        "loading": "AI Analyzing Document...",
+        "authenticity": "Authenticity Check",
+        "likelyAuthentic": "Likely Authentic",
+        "summary": "AI Summary",
+        "keyPoints": "Key Points",
+        "actions": "Suggested Actions",
+        "reminders": "AI-Generated Reminders",
+        "suggestedDate": "Suggested Date",
+        "noReminders": "No specific reminders identified."
+    }
+  },
+  "timeline": {
+    "created": "Created",
+    "viewed": "Viewed",
+    "edited": "Edited",
+    "shared": "Shared",
+    "summarized": "Summarized",
+    "archived": "Archived"
+  },
+  "shareModal": {
+    "title": "Share Document",
+    "shareWith": "Share with people or teams",
+    "placeholder": "Enter email addresses or names...",
+    "selectFromTeam": "Or select from your team:",
+    "permissions": "Permissions",
+    "canView": "Can View",
+    "canEdit": "Can Edit",
+    "share": "Share",
+    "validationError": "Please enter an email or select a team member.",
+    "shareSuccess": "Document \"{{documentName}}\" shared with {{email}} with {{permission}} permissions."
+  },
+  "addMemberModal": {
+    "title": "Add New Team Member",
+    "teamPlaceholder": "e.g., Engineering",
+    "avatarUrl": "Avatar URL (Optional)",
+    "avatarPlaceholder": "Auto-generates if empty",
+    "addMember": "Add Member",
+    "validationError": "Please fill out all required fields."
+  },
+  "teamProfileModal": {
+    "docsOwned": "Docs Owned",
+    "joined": "Joined",
+    "message": "Message"
+  },
+  "messageModal": {
+    "title": "Send Message",
+    "to": "To",
+    "placeholder": "Type your message here...",
+    "validationError": "Message cannot be empty.",
+    "sendSuccess": "Message sent to {{name}}: \"{{message}}\""
+  },
+  "chatbot": {
+    "toggle": "Toggle Chatbot",
+    "title": "Doc Assistant",
+    "discussing": "Discussing",
+    "attachDocument": "Attach a document to discuss",
+    "selectDocument": "Select a Document to Discuss",
+    "searchDocuments": "Search documents...",
+    "inputPlaceholder": "Ask about your documents..."
+  }
+}

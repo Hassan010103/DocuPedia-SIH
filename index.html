@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KMRL Document Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.17.0",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1"
+  }
+}
+</script>
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+  }
+  .stamp {
+    display: inline-block;
+    padding: 1px 8px;
+    border: 2px solid;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: 10px;
+    transform: rotate(-4deg);
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+    background-color: transparent !important; /* Override other BGs */
+    white-space: nowrap;
+  }
+  .stamp-high { border-color: #ef4444; color: #ef4444; }
+  .stamp-medium { border-color: #f59e0b; color: #f59e0b; }
+  .stamp-low { border-color: #10b981; color: #10b981; }
+  .stamp-active { border-color: #16a34a; color: #16a34a; }
+  .stamp-invited { border-color: #d97706; color: #d97706; }
+  .stamp-inactive { border-color: #64748b; color: #64748b; }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
