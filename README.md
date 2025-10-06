@@ -1,232 +1,236 @@
-<div align="center">
-  <h1>KMRL DocStream Nexus</h1>
-  <p>Cloud-first, production-grade document intelligence and collaboration platform</p>
-  <p>
-    <i>Ingestion → Processing → Storage & Indexing → Insight & Action → Security → UI → Monitoring</i>
-  </p>
-</div>
+# 🚇 DocuPedia: Intelligent Document Workflow & Decision System
+
+**Transforming document overload into actionable intelligence for Kochi Metro Rail Limited (KMRL).**
+
+DocuPedia is an AI-powered enterprise solution designed to automate document management, streamline workflows, ensure compliance, and preserve institutional knowledge.  
+It combines **AI, NLP, Blockchain, and Knowledge Graphs** to turn scattered, multilingual documents into structured, verified, and instantly usable insights.
 
 ---
 
-## 1) Overview
+## 🦯 Table of Contents
 
-DocStream Nexus is an end-to-end document management and intelligence platform designed for metro operations at scale. It unifies ingestion from many sources, structures and classifies content, extracts insights, secures records, enables knowledge discovery, and powers collaborative workflows.
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [System Architecture](#system-architecture)
+- [Technology Stack](#technology-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Module Breakdown](#module-breakdown)
+- [File Structure](#file-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-The system is modular and microservices-driven, with each capability deployable and scalable independently. This repository hosts the modern React front-end; the backend services and data plane are described below to enable a full production rollout.
+---
 
-Key goals
-- Consolidate multi-channel document inflow (email, WhatsApp, SharePoint, scans, uploads)
-- OCR, bilingual processing, and metadata enrichment
-- Department-wise categorization, auto-tagging, timelines, and a knowledge graph
-- AI-powered summarization, clause extraction, priority scoring, and personalization
-- Secure access with signatures, audit, and compliance tracking
-- Powerful search, chatbot Q&A, visualization, and predictive insights
+## 🧩 Overview
 
+Every day, **KMRL** handles thousands of documents — from safety circulars and engineering drawings to invoices and HR directives — scattered across SharePoint, WhatsApp, and email.  
+This results in **delays, duplication, compliance risks, and knowledge loss**.
 
-## 2) High-Level Architecture
+DocuPedia acts as a **one-stop intelligent document ecosystem** that:
+- Automates document ingestion and categorization.  
+- Creates AI-generated workflows and balanced work assignments.  
+- Enables natural-language document querying via chatbot.  
+- Ensures document authenticity through blockchain + QR verification.  
+- Maintains traceable, department-linked knowledge graphs.
 
-Ingestion Layer → Processing Layer → Storage & Indexing Layer → Insight & Action Layer → Security Layer → User Interface Layer → Monitoring & Feedback Layer
+---
 
-- Ingestion: Connectors for Email, WhatsApp PDFs, SharePoint, Cloud Storage, Scanners, and Ad‑hoc uploads; queued by Kafka/RabbitMQ
-- Processing: OCR, translation, validation, malware scan, NLP-based metadata & categorization
-- Storage & Indexing: Raw in object storage; metadata in PostgreSQL; content indexed in Elasticsearch; relationships in Neo4j
-- Insight & Action: Summarization (T5/BART), clause extraction (spaCy + RegEx), smart scoring (Transformer + RL), slide generation, task triggers
-- Security: PKI signatures, RBAC/ABAC, blockchain audit, compliance alerts
-- UI: React app with dashboards, timelines, knowledge graph, chatbot, analytics
-- Monitoring: Prometheus/Grafana and ELK; feedback loop to improve models
+## 🚀 Key Features
 
+### 🔹 Smart Ingestion Pipeline
+- Connects to **SharePoint, Email, WhatsApp**, and cloud storage.  
+- OCR-enabled for multilingual (English + Malayalam) text extraction.  
+- Normalizes file formats and stores structured metadata.
 
-## 3) Feature Set by Layer
+### 🔹 AI Workflow Creation
+- Auto-generates **multi-step task flows** from new documents (e.g., HR → Compliance → Manager).  
+- Reduces manual routing and delays.
 
-### A. Ingestion (DocStream)
-- Multi-source connectors: Gmail/Microsoft Graph, WhatsApp Business/Twilio, SharePoint, S3/Blob/GCS, secure uploads
-- OCR for scans, bilingual handling, malware scanning
-- Normalization (PDF/DOCX/images) and metadata extraction
-- Streaming via Kafka/RabbitMQ; failure queues and CloudWatch/ELK monitoring
+### 🔹 AI Workload Distribution
+- Dynamically assigns incoming tasks based on **real-time staff workload**.  
+- Uses predictive analytics to balance efficiency and avoid bottlenecks.
 
-### B. Structuring & Categorization
-- Department/type categorization using transformer-based contextualization + logistic regression
-- Auto-tagging via NER (spaCy), regex heuristics, and user feedback loops
-- Document timelines, versioning, and cross-department linkage via Neo4j knowledge graph
-- Succession workflows for staff transfers/retirements
+### 🔹 Knowledge Graph Integration
+- Builds a **graph of linked documents** across departments (Engineering ↔ Procurement ↔ HR).  
+- Provides cross-department traceability and eliminates data silos.
 
-### C. Insight Extraction & Summarization (InfoSynth)
-- Abstractive summaries via T5/BART; key issues in ≤3 bullets
-- Highlighting of dates, financials, safety clauses (spaCy + RegEx)
-- SmartScore: transformer features + reinforcement learning signals for prioritization
-- Slide generation for board-ready decks; export to Google Slides/PowerPoint
-- Bias monitoring and zero-overload personalization
-- Doc-to-action: triggers to enterprise systems (e.g., maintenance, HR) via APIs
+### 🔹 AI Knowledge Chatbot
+- Answers queries in natural language using **semantic search + knowledge graph**.  
+- Retains insights like a **retiring employee’s brain**, ensuring knowledge continuity.
 
-### D. Security & Compliance (TrustLayer Vault)
-- Digital signatures (PKI), biometric signing (WebAuthn/FIDO2)
-- RBAC + ABAC enforcement, row- and query-level filters
-- Blockchain audit trail (e.g., Hyperledger Fabric or Ethereum) storing document hashes/timestamps
-- Compliance trackers with reminders and escalations
+### 🔹 Blockchain + QR Verification
+- Hashes every document on blockchain for **tamper-proof authenticity**.  
+- QR codes allow instant verification of source, version, and timestamp.
 
-### E. Collaboration & Search (Knowledge Grid)
-- Dashboards, timelines, and version comparisons
-- Graph visualization of relationships (Neo4j)
-- Natural‑language search powered by Elasticsearch + embedding retrieval (FAISS)
-- Chatbot: BERT + Knowledge Graph–aware retrieval for precise answers
+### 🔹 Summarization & Insights (InfoSynth AI)
+- Condenses lengthy reports into **3-point actionable insights**, highlighting deadlines, risks, and costs.
 
-### F. Automation & Personalization (SmartPulse)
-- Deadline notifications, smart alerts (push/email/SMS)
-- Personalized feeds via RL and interaction telemetry; caching in Redis
-- Airflow‑orchestrated workflows
+---
 
-### G. AI Analytics & Predictive Insights (CognitiCore)
-- Bias detection and explainability (SHAP/LIME)
-- Forecasting using ARIMA/Prophet
-- Auto succession planning and query intelligence
-- Deepfake/tampering checks for embedded images/signatures
+## 🧱 System Architecture
 
-### H. Monitoring, Feedback & Continuous Learning
-- System health dashboards (Prometheus/Grafana) and log analytics (ELK)
-- User feedback capture; active learning & scheduled retraining (Airflow)
-
-
-## 4) Technology Stack
-
-- UI: React + TypeScript, Vite, Tailwind
-- APIs/Gateway: Node/Express, AWS API Gateway or Kong
-- Messaging: Apache Kafka or RabbitMQ
-- OCR: AWS Textract / Tesseract / Google Vision
-- NLP/ML: Transformers (T5/BART/BERT), spaCy, scikit‑learn, PyTorch/TensorFlow
-- Vector/Search: Elasticsearch, FAISS
-- Graph: Neo4j or Amazon Neptune
-- Datastores: PostgreSQL (metadata), S3/Blob/GCS (raw), MongoDB (aux), Redis (cache)
-- Security: OpenSSL / AWS KMS, WebAuthn/FIDO2, RBAC/ABAC, Blockchain audit (Hyperledger/Ethereum)
-- Orchestration & Schedules: Apache Airflow, Celery
-- Monitoring: Prometheus, Grafana, ELK
-
-
-## 5) Repository Structure
-
-This repo contains the front‑end app.
-
-```
-.
-├─ components/              # UI components
-├─ contexts/                # i18n + theme providers
-├─ data/                    # demo data for local UI
-├─ services/                # client-side service stubs
-├─ locales/                 # bundled i18n JSON
-├─ types.ts                 # shared types
-├─ vite.config.ts
-├─ package.json
-└─ README.md                # you are here
+```plaintext
+📄 Document Sources → 📥 Ingestion Hub → ⚙️ Preprocessing & Categorization
+     ↓
+🥉 Knowledge Graph ↔ 🤓 AI Workflow Engine ↔ 🤖 Workload Distribution
+     ↓
+💬 AI Chatbot  ↔  🔐 Blockchain + QR  ↔  📊 Reports & Dashboards
 ```
 
-Backend microservices, workers, and infrastructure are deployable as separate services (not included in this UI repo).
+---
 
+## 🤰 Technology Stack
 
-## 6) Getting Started (Front‑end)
+| Layer | Technologies Used |
+|-------|--------------------|
+| **Frontend** | React.js, Angular, Tailwind |
+| **Backend** | FastAPI, Python, Node.js |
+| **AI / NLP Models** | T5, BERT, BART, IndicBERT, SpaCy |
+| **Knowledge Graph** | Neo4j |
+| **Database** | PostgreSQL, MongoDB |
+| **Blockchain Layer** | Hyperledger Fabric, IPFS |
+| **Cloud & Infra** | AWS / Azure, Kafka, RabbitMQ |
+| **Version Control** | Git, GitHub |
 
-Prerequisites
-- Node.js 18+
+---
 
-Install and run
+## ⚙️ Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/yourusername/DocuPedia.git
+   cd DocuPedia
+   ```
+
+2. **Create Virtual Environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate     # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configure Environment Variables**
+   Create a `.env` file and add the following:
+   ```bash
+   GEMINI_API_KEY = "Your Gemini API Key"
+   NEO4J_URI = "Your Neo4j URI"
+   NEO4J_USERNAME = "Your Username"
+   NEO4J_PASSWORD = "Your Password"
+   ```
+
+5. **Run the Application**
+   ```bash
+   python manage.py runserver
+   ```
+
+---
+
+## 💻 Usage
+
+### Web Interface:
+- Access via `http://127.0.0.1:8000`
+- Features:
+  - Document upload & tracking
+  - Workflow approval panel
+  - AI chatbot interface
+  - QR verification dashboard
+
+### Command-line:
 ```bash
-npm install
-npm run dev
+python scripts/summarize.py --input "SafetyCircular.pdf"
 ```
 
-Build for production
-```bash
-npm run build
-npm run preview
+---
+
+## 🥮 Module Breakdown
+
+| Module | Function |
+|--------|-----------|
+| **Ingestion Hub** | Gathers and OCRs documents from all sources |
+| **Preprocessing Engine** | Cleans and extracts metadata |
+| **Workflow Engine** | Builds and routes AI-generated task chains |
+| **Workload Manager** | Predictive balancing of staff assignments |
+| **Knowledge Graph** | Interlinks related documents |
+| **Chatbot Module** | Semantic search + institutional knowledge |
+| **Security Layer** | Blockchain + QR verification |
+| **Analytics Module** | Summarization, insights, and reports |
+
+---
+
+## 🗂️ File Structure
+
+```plaintext
+DocuPedia/
+├── manage.py
+├── settings.py
+├── urls.py
+├── requirements.txt
+├── ingestion/
+│   ├── ocr.py
+│   ├── connectors.py
+│   └── preprocess.py
+├── workflow/
+│   ├── generator.py
+│   ├── assigner.py
+│   └── models.py
+├── chatbot/
+│   ├── nlp_engine.py
+│   ├── semantic_search.py
+│   └── chat_interface.html
+├── blockchain/
+│   ├── qr_module.py
+│   └── ledger.py
+├── static/
+│   └── assets/
+└── templates/
+    ├── dashboard.html
+    ├── chatbot.html
+    └── verification.html
 ```
 
-Deploy to Vercel
-1. Push this repo to GitHub/GitLab
-2. Import in Vercel and set required environment variables (see below)
-3. Framework preset: Vite; Build Command: `npm run build`; Output: `dist`
+---
 
+## 🧪 Contributing
 
-## 7) Environment Variables (reference)
+We welcome contributions!  
+To contribute:
+1. Fork the repository  
+2. Create a new branch  
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. Commit your changes  
+   ```bash
+   git commit -am "Add new feature"
+   ```
+4. Push to your branch  
+   ```bash
+   git push origin feature/YourFeature
+   ```
+5. Submit a Pull Request 🎉  
 
-Create `.env`/project secrets as needed by your deployment. Not all are required for the UI alone, but are listed for the full platform.
+---
 
-```
-# Ingestion
-GMAIL_API_KEY=
-MS_GRAPH_CLIENT_ID=
-MS_GRAPH_CLIENT_SECRET=
-TWILIO_ACCOUNT_SID=
-TWILIO_AUTH_TOKEN=
+## 🧪 License
 
-# Storage & Indexing
-S3_BUCKET=
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AZURE_BLOB_CONNECTION_STRING=
-ELASTICSEARCH_URL=
-POSTGRES_URL=
-MONGODB_URI=
+This project is licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for more details.
 
-# Graph / Vector
-NEO4J_URI=
-NEO4J_USERNAME=
-NEO4J_PASSWORD=
-FAISS_INDEX_PATH=
+---
 
-# OCR / Translation
-OCR_PROVIDER_KEY=
-TRANSLATE_API_KEY=
+## 📬 Contact
 
-# Messaging / Orchestration
-KAFKA_BROKERS=
-RABBITMQ_URL=
-AIRFLOW_BASE_URL=
+For queries or collaboration:  
+**Team DocuPedia**  
+📧 Email: team.docupedia@gmail.com  
+🏩 Developed for **Smart India Hackathon 2025**
 
-# Security & Auth
-JWT_SECRET=
-WEB_AUTHN_RP_ID=
-BLOCKCHAIN_NODE_URL=
+---
 
-# Monitoring
-PROMETHEUS_PUSHGATEWAY=
-```
-
-
-## 8) Data & Model Notes
-
-- Categorization: transformer embeddings + logistic regression per department/type
-- Entity extraction: spaCy pipelines + curated regex for dates, deadlines, safety/finance clauses
-- Summarization: T5/BART with domain fine‑tuning; configurable length/format
-- Scoring: hybrid (transformer features + RL from user interactions)
-- Chatbot: BERT encoder + KG‑aware retrieval + Elasticsearch re‑ranking
-- Forecasting: ARIMA/Prophet for compliance and workload predictions
-
-
-## 9) Security & Compliance
-
-- PKI‑based digital signatures and WebAuthn for strong authentication
-- RBAC/ABAC with policy enforcement at query time
-- Blockchain audit trail storing content hashes + timestamps to guarantee integrity
-- Compliance monitors and deadline alerts
-
-
-## 10) Roadmap
-
-- Multi-tenant tenancy and org‑level policies
-- Red‑blue deployment for model updates
-- Human‑in‑the‑loop review queues for high‑risk docs
-- Data retention and legal hold workflows
-- Mobile companion app (capture + approvals)
-
-
-## 11) Team Submission (Appendix)
-
-- Problem Statement ID: SIH25080
-- Title: Document Overload at Kochi Metro Rail Limited (KMRL) – An automated solution
-- Theme: Smart Automation
-- PS Category: Software
-- Team Name: DocuPedia
-
-
-## 12) License
-
-Copyright © 2025. All rights reserved.
-
+### ✨ *DocuPedia — Turning document overload into intelligent, trusted workflows.*
