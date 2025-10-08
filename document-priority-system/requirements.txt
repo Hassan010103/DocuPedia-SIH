@@ -1,0 +1,40 @@
+# KMRL Document Priority System - Dependencies
+# SIH 2025
+
+# Core ML Libraries
+numpy==1.24.3
+scikit-learn==1.3.0
+scipy==1.11.1
+
+# NLP Processing
+nltk==3.8.1
+spacy==3.6.0
+
+# For production BERT (optional - not required for demo)
+# transformers==4.30.0
+# torch==2.0.1
+# sentence-transformers==2.2.2
+
+# Data Processing
+pandas==2.0.3
+python-dateutil==2.8.2
+
+# API Framework (for future deployment)
+flask==2.3.2
+flask-cors==4.0.0
+
+# Utilities
+python-dotenv==1.0.0
+pyyaml==6.0
+
+# For document parsing (future enhancement)
+# PyPDF2==3.0.1
+# python-docx==0.8.11
+# openpyxl==3.1.2
+
+# Logging and Monitoring
+colorlog==6.7.0
+
+# Testing
+pytest==7.4.0
+pytest-cov==4.1.0

@@ -1,0 +1,264 @@
+{
+  "authority_hierarchy": {
+    "CMRS": {
+      "full_name": "Commissioner of Metro Rail Safety",
+      "authority_level": 1,
+      "weight": 1.0,
+      "jurisdiction": "All safety-related matters",
+      "typical_documents": ["Safety_Circular", "Regulatory_Directive", "Compliance_Notice"]
+    },
+    "MoHUA": {
+      "full_name": "Ministry of Housing & Urban Affairs",
+      "authority_level": 1,
+      "weight": 0.95,
+      "jurisdiction": "Policy, regulations, environmental compliance",
+      "typical_documents": ["Regulatory_Directive", "Compliance_Notice", "Policy_Update"]
+    },
+    "Executive_Directors": {
+      "full_name": "Executive Directors Office",
+      "authority_level": 2,
+      "weight": 0.9,
+      "jurisdiction": "Strategic decisions, board matters",
+      "typical_documents": ["Board_Minutes", "Strategic_Directive", "Policy_Update"]
+    },
+    "Safety": {
+      "full_name": "Safety Department",
+      "authority_level": 3,
+      "weight": 0.95,
+      "jurisdiction": "Day-to-day safety operations",
+      "typical_documents": ["Safety_Circular", "Incident_Report", "Safety_Alert"]
+    },
+    "Engineering": {
+      "full_name": "Engineering Department",
+      "authority_level": 3,
+      "weight": 0.85,
+      "jurisdiction": "Infrastructure, construction, technical specifications",
+      "typical_documents": ["Engineering_Drawing", "Technical_Specification", "Design_Change"]
+    },
+    "Operations": {
+      "full_name": "Operations Department",
+      "authority_level": 3,
+      "weight": 0.8,
+      "jurisdiction": "Train operations, schedules, service delivery",
+      "typical_documents": ["Incident_Report", "Schedule_Change", "Operational_Notice"]
+    },
+    "Maintenance": {
+      "full_name": "Maintenance Department",
+      "authority_level": 3,
+      "weight": 0.8,
+      "jurisdiction": "Rolling stock and infrastructure maintenance",
+      "typical_documents": ["Maintenance_Alert", "Job_Card", "Inspection_Report"]
+    },
+    "Legal": {
+      "full_name": "Legal Department",
+      "authority_level": 3,
+      "weight": 0.85,
+      "jurisdiction": "Legal matters, contracts, compliance",
+      "typical_documents": ["Legal_Opinion", "Contract_Document", "Compliance_Notice"]
+    },
+    "Finance": {
+      "full_name": "Finance Department",
+      "authority_level": 4,
+      "weight": 0.75,
+      "jurisdiction": "Financial management, budgets, payments",
+      "typical_documents": ["Budget_Document", "Financial_Report", "Payment_Approval"]
+    },
+    "Procurement": {
+      "full_name": "Procurement Department",
+      "authority_level": 4,
+      "weight": 0.7,
+      "jurisdiction": "Vendor management, purchasing",
+      "typical_documents": ["Purchase_Order", "Vendor_Invoice", "Tender_Document"]
+    },
+    "HR": {
+      "full_name": "Human Resources Department",
+      "authority_level": 4,
+      "weight": 0.65,
+      "jurisdiction": "Personnel, policies, training",
+      "typical_documents": ["HR_Policy", "Training_Notice", "Personnel_Order"]
+    }
+  },
+  
+  "document_type_urgency": {
+    "Safety_Circular": {
+      "urgency_multiplier": 1.0,
+      "typical_response_time_hours": 24,
+      "requires_acknowledgment": true
+    },
+    "Regulatory_Directive": {
+      "urgency_multiplier": 0.95,
+      "typical_response_time_hours": 72,
+      "requires_acknowledgment": true
+    },
+    "Incident_Report": {
+      "urgency_multiplier": 0.9,
+      "typical_response_time_hours": 48,
+      "requires_acknowledgment": true
+    },
+    "Compliance_Notice": {
+      "urgency_multiplier": 0.9,
+      "typical_response_time_hours": 120,
+      "requires_acknowledgment": true
+    },
+    "Maintenance_Alert": {
+      "urgency_multiplier": 0.85,
+      "typical_response_time_hours": 48,
+      "requires_acknowledgment": false
+    },
+    "Engineering_Drawing": {
+      "urgency_multiplier": 0.75,
+      "typical_response_time_hours": 168,
+      "requires_acknowledgment": false
+    },
+    "Board_Minutes": {
+      "urgency_multiplier": 0.7,
+      "typical_response_time_hours": 120,
+      "requires_acknowledgment": false
+    },
+    "Purchase_Order": {
+      "urgency_multiplier": 0.65,
+      "typical_response_time_hours": 240,
+      "requires_acknowledgment": false
+    },
+    "Vendor_Invoice": {
+      "urgency_multiplier": 0.6,
+      "typical_response_time_hours": 720,
+      "requires_acknowledgment": false
+    },
+    "HR_Policy": {
+      "urgency_multiplier": 0.5,
+      "typical_response_time_hours": 720,
+      "requires_acknowledgment": false
+    },
+    "General_Notice": {
+      "urgency_multiplier": 0.4,
+      "typical_response_time_hours": 1440,
+      "requires_acknowledgment": false
+    }
+  },
+  
+  "cross_department_relevance": {
+    "Operations": {
+      "Operations": 1.0,
+      "Maintenance": 0.85,
+      "Engineering": 0.7,
+      "Safety": 0.95,
+      "Procurement": 0.4,
+      "HR": 0.3,
+      "Finance": 0.4,
+      "Legal": 0.5,
+      "Executive_Directors": 0.8,
+      "CMRS": 0.9,
+      "MoHUA": 0.7
+    },
+    "Engineering": {
+      "Engineering": 1.0,
+      "Operations": 0.75,
+      "Maintenance": 0.8,
+      "Safety": 0.85,
+      "Procurement": 0.7,
+      "HR": 0.2,
+      "Finance": 0.5,
+      "Legal": 0.6,
+      "Executive_Directors": 0.75,
+      "CMRS": 0.8,
+      "MoHUA": 0.8
+    },
+    "Safety": {
+      "Safety": 1.0,
+      "Operations": 0.95,
+      "Engineering": 0.85,
+      "Maintenance": 0.9,
+      "Procurement": 0.5,
+      "HR": 0.65,
+      "Finance": 0.4,
+      "Legal": 0.7,
+      "Executive_Directors": 0.9,
+      "CMRS": 1.0,
+      "MoHUA": 0.85
+    },
+    "Maintenance": {
+      "Maintenance": 1.0,
+      "Operations": 0.85,
+      "Engineering": 0.75,
+      "Safety": 0.9,
+      "Procurement": 0.75,
+      "HR": 0.25,
+      "Finance": 0.45,
+      "Legal": 0.4,
+      "Executive_Directors": 0.6,
+      "CMRS": 0.8,
+      "MoHUA": 0.6
+    },
+    "Procurement": {
+      "Procurement": 1.0,
+      "Finance": 0.85,
+      "Engineering": 0.65,
+      "Operations": 0.5,
+      "Maintenance": 0.7,
+      "HR": 0.3,
+      "Safety": 0.45,
+      "Legal": 0.75,
+      "Executive_Directors": 0.7,
+      "CMRS": 0.4,
+      "MoHUA": 0.5
+    },
+    "HR": {
+      "HR": 1.0,
+      "Operations": 0.4,
+      "Engineering": 0.3,
+      "Maintenance": 0.35,
+      "Safety": 0.65,
+      "Procurement": 0.3,
+      "Finance": 0.55,
+      "Legal": 0.6,
+      "Executive_Directors": 0.7,
+      "CMRS": 0.3,
+      "MoHUA": 0.4
+    },
+    "Finance": {
+      "Finance": 1.0,
+      "Procurement": 0.85,
+      "Operations": 0.55,
+      "Engineering": 0.5,
+      "Maintenance": 0.5,
+      "HR": 0.6,
+      "Safety": 0.45,
+      "Legal": 0.7,
+      "Executive_Directors": 0.9,
+      "CMRS": 0.4,
+      "MoHUA": 0.6
+    },
+    "Legal": {
+      "Legal": 1.0,
+      "Procurement": 0.75,
+      "Finance": 0.7,
+      "HR": 0.65,
+      "Engineering": 0.6,
+      "Operations": 0.55,
+      "Maintenance": 0.45,
+      "Safety": 0.7,
+      "Executive_Directors": 0.85,
+      "CMRS": 0.8,
+      "MoHUA": 0.9
+    }
+  },
+  
+  "urgency_keywords": {
+    "critical": ["emergency", "critical", "urgent", "immediate", "asap", "priority"],
+    "high": ["important", "soon", "timely", "expedite", "alert"],
+    "medium": ["review", "attention", "consider", "schedule"],
+    "low": ["information", "fyi", "reference", "update"]
+  },
+  
+  "department_tags": {
+    "Operations": ["operations", "train", "service", "schedule", "timetable", "passenger", "station"],
+    "Engineering": ["engineering", "design", "construction", "infrastructure", "technical", "drawing"],
+    "Safety": ["safety", "incident", "hazard", "emergency", "security", "risk"],
+    "Maintenance": ["maintenance", "repair", "inspection", "preventive", "breakdown", "servicing"],
+    "Procurement": ["procurement", "vendor", "purchase", "supplier", "contract", "tender"],
+    "Finance": ["finance", "payment", "budget", "invoice", "cost", "revenue"],
+    "HR": ["hr", "personnel", "training", "leave", "employee", "policy"],
+    "Legal": ["legal", "contract", "compliance", "regulation", "audit"]
+  }
+}
